@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client"
+import { useSession, signIn, signOut } from "next-auth/react"
+import react from "react";
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
 
       <div className="text-black container mx-auto  py-32 pt-14" >
 
-        <h1 className="text-4xl font-bold text-center mb-14  " >Your Fans can buy you a Chai</h1>
+        <h2 className="text-4xl font-bold text-center mb-14  " >Your Fans can buy you a Chai</h2>
         
         <div className="flex gap-5 justify-around" >
 
@@ -48,7 +50,7 @@ export default function Home() {
 
       <div className="text-black container mx-auto py-32 pt-14 flex flex-col items-center justify-center " >
 
-        <h1 className="text-4xl font-bold text-center mb-14 " >Learn more about us</h1>
+        <h2 className="text-4xl font-bold text-center mb-14 " >Learn more about us</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/QtaorVNAwbI?si=r5-uPtCzC2941dsB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </>
