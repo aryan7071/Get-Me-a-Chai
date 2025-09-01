@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-/* body {
-  overflow-y: hidden;
-} */
+.invertImg{
+  filter: invert(0.23);
+}
