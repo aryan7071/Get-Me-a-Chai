@@ -2,6 +2,7 @@ import React from 'react'
 
 const username = async ({ params }) => {
     const { username } = await params;
+    
     return (
         <>
             <div className='cover w-full relative ' >
