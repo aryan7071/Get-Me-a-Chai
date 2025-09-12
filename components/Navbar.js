@@ -7,12 +7,12 @@ import Link from 'next/link'
 const Navbar = () => {
   const { data: session } = useSession()
   const [showdropdown, setshowdropdown] = useState(false)
-
+ 
   return (
     <nav className='bg-gray-900 text-white flex justify-between items-center px-4 h-16'>
 
       <Link className="logo font-bold text-lg flex items-center justify-center" href={"/"} >
-        <img className='invertImg' src="tea.gif" width={44} alt="" />
+       
         <span>GetMeaChai!</span>
       </Link>
       {/* <ul classNameName='flex justify-between gap-4 '>

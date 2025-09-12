@@ -6,10 +6,10 @@ import connectDB from "@/db/connectDB"
 import User from "@/models/User"
 
 
-export const initiate = async (amount, to_username, paymentform) => {
+export const initiate = async (amount, to_user, paymentform) => {
     await connectDB()
     var instance = new Razorpay({
-        key_id: process.env.KEY_ID,
+        key_id: process.env.NEXT_PUBLIC_KEY_ID,
         key_secret: process.env.KEY_SECRET,
     })
 
@@ -19,11 +19,25 @@ export const initiate = async (amount, to_username, paymentform) => {
 
     }
 
-    let x = await  instance.orders.create(options)
+    let x = await instance.orders.create(options)
 
-    await Payment.create({oid:x.id , amount:amount , to_username: to_username , name: paymentform.name, message: paymentform.message })
+    await Payment.create({ oid: x.id, amount: amount, to_user: to_user, name: paymentform.name, message: paymentform.message })
 
-    return x 
+    return x
 
     instance.orders.all().then(console.log).catch(console.error);
+}
+
+
+export const fetchuser = async (username) => {
+    await connectDB()
+    let u = User.findOne({ username: username })
+    let user = u.toobject({ flattenObjectIds: true })
+    return user
+}
+
+export const fetchpayments = async (username) => {
+    await connectDB()
+    let p = await Payment.find({ to_user: username }).sort({amount:-1}).lean()
+    return p
 }
