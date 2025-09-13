@@ -8,7 +8,7 @@ const PaymentSchema = new Schema({
     message: { type: String },
     createdAt: { type: String, default: Date.now },
     updatedAt: { type: String, default: Date.now },
-    done: { type: Boolean, default: false },
+    done: { type: Boolean, default: false },    
 
 })
 

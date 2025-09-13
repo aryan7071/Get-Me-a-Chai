@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
+import { updateProfile } from '@/actions/useractions';
+import { fetchuser } from '@/actions/useractions';
 
 const Dashboard = () => {
     const { data: session, update } = useSession()
