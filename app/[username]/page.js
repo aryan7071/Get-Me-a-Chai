@@ -20,9 +20,17 @@ const Username = async ({ params }) => {
     return (
         <>
             <PaymentPage username={params.username} />
-            {console.log(params.username)}
+           
         </>
     )
 }
 
 export default Username
+
+
+//either Static metadata
+export async function  generateMetadata({params}){
+    return{
+        title:`Support ${params.username} - Get Me A Chai`,
+    }
+}

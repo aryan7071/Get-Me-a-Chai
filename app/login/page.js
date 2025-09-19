@@ -3,14 +3,20 @@ import React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+
+
+
+
+
 const Login = () => {
 const { data: session, status } = useSession();
   const router = useRouter();
   // ✅ Redirect if logged in
   useEffect(() => {
+    document.title = "Login - Get me A Chai"
     if (status === "loading") return; // Wait for session to load
     if (session) {
-      console.log("Session data:", session);
+      
       router.push("/dashboard");
     } 
   }, [session, status, router]);
@@ -21,7 +27,7 @@ const { data: session, status } = useSession();
       <div className="text-black py-14 mx-auto " >
 
 
-        <h1 className="text-center font-bold text-4xl" >Login to Get your fans to Support you</h1>
+        <h1 className="text-center font-bold text-4xl" >Login to Get Started</h1>
         <div className="Social-button flex flex-col gap-2 items-center justify-center w-1/2 mx-auto py-14 ">
           {/* Google Button */}
           <button
@@ -90,4 +96,5 @@ const { data: session, status } = useSession();
 };
 
 export default Login;
+
 
