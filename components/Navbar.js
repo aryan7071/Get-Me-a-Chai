@@ -9,11 +9,11 @@ const Navbar = () => {
   const [showdropdown, setshowdropdown] = useState(false)
  
   return (
-    <nav className='bg-gray-900 text-white flex justify-between items-center px-4 h-16'>
+    <nav className='bg-gray-900 text-white flex justify-between items-center px-4 md:h-16  flex-col md:flex-row '>
 
       <Link className="logo font-bold text-lg flex items-center justify-center" href={"/"} >
        
-        <span>GetMeaChai!</span>
+        <span className='text-2xl md:text-base my-3 md:my-0' >GetMeaChai!</span>
       </Link>
       {/* <ul classNameName='flex justify-between gap-4 '>
             <li>Home</li>
@@ -22,7 +22,7 @@ const Navbar = () => {
             <li>Sign Up</li>
             <li>Login</li>
         </ul> */}
-      <div className='relative' >
+      <div className='relative flex flex-col md:block gap-4 ' >
         {session && <>
           <button onClick={() => setshowdropdown(!showdropdown)} onBlur={() => {
             setTimeout(() => {
